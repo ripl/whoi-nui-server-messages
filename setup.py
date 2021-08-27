@@ -1,3 +1,4 @@
+import sys
 from distutils.core import setup
 
 
@@ -31,10 +32,11 @@ setup(
     description='whoi nlu server messages',
     author='Andrea F. Daniele',
     author_email='afdaniele@ttic.edu',
-    url='https://',
+    url='https://github.com/ripl/whoi-nui-server-messages',
     keywords=['whoi', 'nlu'],
     install_requires=[
-        'cbor2'
+        'cbor2',
+        *(['dataclasses'] if sys.version_info < (3, 7) else [])
     ],
     classifiers=[]
 )

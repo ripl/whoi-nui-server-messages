@@ -8,7 +8,7 @@ new-dist:
 	$(MAKE) clean bump-upload
 
 bump-upload:
-	$(MAKE) test bump upload
+	$(MAKE) bump upload
 
 bump:
 	bumpversion ${PART}

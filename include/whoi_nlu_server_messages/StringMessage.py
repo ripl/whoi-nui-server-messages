@@ -1,6 +1,6 @@
 import dataclasses
 
-from nri_data_server.messages.CBorMessage import CBorMessage
+from whoi_nlu_server_messages.CBorMessage import CBorMessage
 
 
 @dataclasses.dataclass
