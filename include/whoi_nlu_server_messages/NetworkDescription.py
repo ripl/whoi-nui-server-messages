@@ -13,3 +13,5 @@ class NetworkDescription(CBorMessage):
     control_port: Optional[int] = None
     speech_to_text_hostname: Optional[str] = None
     speech_to_text_port: Optional[int] = None
+    h2sl_hostname: Optional[str] = None
+    h2sl_port: Optional[int] = None
