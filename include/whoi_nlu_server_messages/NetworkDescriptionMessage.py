@@ -6,7 +6,7 @@ from whoi_nlu_server_messages.CBorMessage import CBorMessage
 
 
 @dataclasses.dataclass
-class NetworkDescription(CBorMessage):
+class NetworkDescriptionMessage(CBorMessage):
     data_hostname: Optional[str] = None
     data_port: Optional[int] = None
     control_hostname: Optional[str] = None
