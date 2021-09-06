@@ -5,4 +5,4 @@ from whoi_nlu_server_messages.CBorMessage import CBorMessage
 
 @dataclasses.dataclass
 class FloatMessage(CBorMessage):
-    value: float
+    data: float
