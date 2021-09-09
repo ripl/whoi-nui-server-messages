@@ -4,7 +4,11 @@ from cbor2 import dumps, loads
 class CBorMessage:
 
     def as_dict(self) -> dict:
-        return self.__dict__
+        return {
+            k: (
+                v.as_dict() if isinstance(v, CBorMessage) else v
+            ) for k, v in self.__dict__.items()
+        }
 
     def to_bytes(self) -> bytes:
         return dumps(self.as_dict())
