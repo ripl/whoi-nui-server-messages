@@ -1,3 +1,5 @@
+from dataclasses import fields
+
 from cbor2 import dumps, loads
 
 
@@ -13,8 +15,17 @@ class CBorMessage:
     def to_bytes(self) -> bytes:
         return dumps(self.as_dict())
 
+    def _ensure_types(self):
+        for field in fields(self):
+            if issubclass(field.type, CBorMessage):
+                field_val = field.type(**getattr(self, field.name))
+                field_val._ensure_types()
+                setattr(self, field.name, field_val)
+
     @classmethod
     def from_bytes(cls, data: bytes) -> 'CBorMessage':
         d = loads(data)
         d.pop("_t", None)
-        return cls(**d)
+        v = cls(**d)
+        v._ensure_types()
+        return v
