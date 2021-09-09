@@ -9,3 +9,13 @@ class QuaternionMessage(CBorMessage):
     y: float
     z: float
     w: float
+
+    @staticmethod
+    def from_ros_quaternion_msg(msg):
+        return QuaternionMessage(
+            x=msg.x,
+            y=msg.y,
+            z=msg.z,
+            w=msg.w,
+        )
+
