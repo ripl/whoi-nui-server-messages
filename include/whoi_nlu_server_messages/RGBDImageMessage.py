@@ -5,7 +5,7 @@ from whoi_nlu_server_messages.HeaderMessage import HeaderMessage
 
 
 @dataclasses.dataclass
-class ImageMessage(CBorMessage):
+class RGBDImageMessage(CBorMessage):
     header: HeaderMessage
     height: int        # image height, that is, number of rows
     width: int         # image width, that is, number of columns
