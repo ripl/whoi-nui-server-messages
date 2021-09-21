@@ -17,5 +17,10 @@ class RGBDImageMessage(CBorMessage):
     # same params as above but for depth data
     d_encoding: str
     d_is_bigendian: int
-    d_step: int          
-    d_data: bytearray    
+    d_step: int
+    d_data: bytearray
+    # Projection/camera matrix
+    #     [fx'  0  cx' Tx]
+    # P = [ 0  fy' cy' Ty]
+    #     [ 0   0   1   0]
+    P: list
