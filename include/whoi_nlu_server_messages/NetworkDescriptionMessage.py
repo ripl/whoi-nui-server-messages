@@ -13,5 +13,7 @@ class NetworkDescriptionMessage(CBorMessage):
     data_heavy_port: int = 0
     speech_to_text_hostname: str = ""
     speech_to_text_port: int = 0
-    h2sl_hostname: str = ""
-    h2sl_port: int = 0
+    h2sl_1_hostname: str = ""
+    h2sl_1_port: int = 0
+    h2sl_2_hostname: str = ""
+    h2sl_2_port: int = 0
