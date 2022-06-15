@@ -4,7 +4,7 @@ from whoi_nlu_server_messages.TransformStampedMessage import TransformStampedMes
 
 
 @dataclasses.dataclass
-class ToolRequestMessage(CBorMessage):
+class PoseRequestMessage(CBorMessage):
     pose: TransformStampedMessage
     name: str
     pos_tolerance: float
